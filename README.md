@@ -9,8 +9,7 @@ Useful to test and prevent your UI from being inconsistent in different resoluti
 ## Download
 
 - Install from the Godot Asset Library at https://godotengine.org/asset-library/asset/1214
-- or clone github repository at https://github.com/Danim3D/godot-plugin-project-resolution
-- or download at https://danim3d.itch.io/godot-plugin-project-resolution
+- or clone github repository at https://github.com/Danim3D/Godot-4-Plugin-Project-Resolution
 
 
 ## Installation
