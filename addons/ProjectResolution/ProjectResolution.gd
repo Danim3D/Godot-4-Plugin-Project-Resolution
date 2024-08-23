@@ -12,6 +12,7 @@ var _menu_items_idx = 0
 var play_on_change = false
 var play_current_scene = false
 var multistart = false
+var change_viewport = false
 var landscape = false
 
 func _enter_tree():
@@ -59,7 +60,7 @@ func _populate_menu() -> void:
 	var isPluginEnabled = false
 	
 	#Add Button settings
-	var _buttons = ["Fullscreen", "Play On Change", "Play Current Scene", "Multistart"]
+	var _buttons = ["Fullscreen", "Play On Change", "Play Current Scene", "Multistart", "Change Viewport Resolution"]
 	for button in _buttons:
 		isPluginEnabled = false
 		if button == "Fullscreen" and current_fullscreen == 3:
@@ -70,10 +71,16 @@ func _populate_menu() -> void:
 			isPluginEnabled = true
 		if button == "Multistart" and multistart == true:
 			isPluginEnabled = true
+		if button == "Change Viewport Resolution" and change_viewport == true:
+			isPluginEnabled = true
 
 		_plugins_menu.add_check_item(button)
 		_plugins_menu.set_item_checked(_menu_items_idx, isPluginEnabled)
 		_menu_items_idx += 1
+	
+	#Viewport Information
+	_plugins_menu.add_separator("Current Viewport "+current_res);
+	_menu_items_idx += 1
 	
 	#Add desktop resolutions
 	_plugins_menu.add_separator("Desktop");
@@ -177,9 +184,15 @@ func _set_resolution(id) -> void:
 			item_name = str(DisplayServer.screen_get_size().x) + "x" + str(DisplayServer.screen_get_size().y)
 		
 		var res = item_name.split("x")
-		ProjectSettings.set_setting("display/window/size/viewport_width", res[0])
-		ProjectSettings.set_setting("display/window/size/viewport_height", res[1])
-		print("Set Project Resolution: " + str(ProjectSettings.get_setting("display/window/size/viewport_width"))+"x"+str(ProjectSettings.get_setting("display/window/size/viewport_height")))
+		#Resolution
+		ProjectSettings.set_setting("display/window/size/window_width_override", res[0])
+		ProjectSettings.set_setting("display/window/size/window_height_override", res[1])
+		print("Set Project Resolution: " + str(ProjectSettings.get_setting("display/window/size/window_width_override"))+"x"+str(ProjectSettings.get_setting("display/window/size/window_height_override")))
+		#Viewport
+		if change_viewport:
+			ProjectSettings.set_setting("display/window/size/viewport_width", res[0])
+			ProjectSettings.set_setting("display/window/size/viewport_height", res[1])
+			print("Set Viewport Resolution: " + str(ProjectSettings.get_setting("display/window/size/viewport_width"))+"x"+str(ProjectSettings.get_setting("display/window/size/viewport_height")))
 		
 		#Update menu button name by resolution
 		_plugin_menu_btn.text = item_name
