@@ -53,7 +53,7 @@ func _refresh_plugins_menu_list() -> void:
 func _populate_menu() -> void:
 	var current_fullscreen = ProjectSettings.get_setting("display/window/size/mode")
 #	print("fullscreen status: "+ str(current_fullscreen))
-	var current_res = str(ProjectSettings.get_setting("display/window/size/viewport_width"))+"x"+str(ProjectSettings.get_setting("display/window/size/viewport_height"))
+	var current_res = str(ProjectSettings.get_setting("display/window/size/window_width_override"))+"x"+str(ProjectSettings.get_setting("display/window/size/window_height_override"))
 #	print("current_res: " + current_res)
 	
 	#by default added buttons are unchecked unless true
