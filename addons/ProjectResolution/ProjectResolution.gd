@@ -175,6 +175,9 @@ func _set_resolution(id) -> void:
 	elif item_name == "Multistart":
 		multistart = !multistart
 		print("Multistart: "+str(multistart))
+	elif item_name == "Change Viewport Resolution":
+		change_viewport = !change_viewport
+		print("Change Viewport Resolution: "+str(change_viewport))
 	elif item_name == "Landscape":
 		landscape = !landscape
 		print("Landscape: "+str(landscape))
