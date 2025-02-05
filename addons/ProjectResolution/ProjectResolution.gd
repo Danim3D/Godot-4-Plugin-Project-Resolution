@@ -60,7 +60,7 @@ func _populate_menu() -> void:
 	var isPluginEnabled = false
 	
 	#Add Button settings
-	var _buttons = ["Fullscreen", "Play On Change", "Play Current Scene", "Multistart", "Change Viewport Resolution"]
+	var _buttons = ["Reset Mode", "Reset Window Size", "Reset Viewport Size", "Fullscreen", "Play On Change", "Play Current Scene", "Multistart", "Change Viewport Resolution"]
 	for button in _buttons:
 		isPluginEnabled = false
 		if button == "Fullscreen" and current_fullscreen == 3:
@@ -158,7 +158,15 @@ func _set_resolution(id) -> void:
 	_plugins_menu.set_item_checked(id, not is_item_checked)
 	
 	var item_name = _plugins_menu.get_item_text(id)
-	if item_name == "Fullscreen":
+	if item_name == "Reset Mode":
+		ProjectSettings.set_setting("display/window/size/mode", 0)
+	elif item_name == "Reset Window Size":
+		ProjectSettings.set_setting("display/window/size/window_width_override", 0)
+		ProjectSettings.set_setting("display/window/size/window_height_override", 0)
+	elif item_name == "Reset Viewport Size":
+		ProjectSettings.set_setting("display/window/size/viewport_width", 1152)
+		ProjectSettings.set_setting("display/window/size/viewport_height", 648)
+	elif item_name == "Fullscreen":
 		#Set Project Fullscreen setting
 		var current_win = ProjectSettings.get_setting("display/window/size/mode")
 		if current_win == 0:
