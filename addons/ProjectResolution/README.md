@@ -31,6 +31,5 @@ On use, the name of the button "Project Resolution" will be renamed by the selec
 - "Multistart" will launch two instances to test network multiplayer project.
 - "Native" will use the current resolution of your desktop.
 - "Landscape" will switch mobile resolutions using Landscape instead of Portrait.
-
-Custom resolutions can be added in the list of resolutions inside the plugin.gd file.
-Resolutions higher than the user screen are hidden.
+- Custom resolutions can be added in the list of resolutions inside the plugin.gd file.
+- Resolutions higher than the user screen are hidden.
