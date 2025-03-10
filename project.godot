@@ -12,13 +12,13 @@ config_version=5
 
 config/name="Godot-4-plugin-project-resolution"
 run/main_scene="res://TestScene.tscn"
-config/features=PackedStringArray("4.2", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width="1280"
-window/size/viewport_height="720"
+window/size/viewport_width="1024"
+window/size/viewport_height="768"
 
 [editor_plugins]
 
