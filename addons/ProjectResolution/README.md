@@ -8,8 +8,9 @@ Useful to test and prevent your UI from being inconsistent in different resoluti
 
 ## Download
 
-- Install from the Godot Asset Library at https://godotengine.org/asset-library/asset/9270
-- or clone github repository at https://github.com/Danim3D/Godot-4-Plugin-Project-Resolution
+- Install from the Godot Asset Library at https://godotengine.org/asset-library/asset/1214
+- or clone github repository at https://github.com/Danim3D/godot-plugin-project-resolution
+- or download at https://danim3d.itch.io/godot-plugin-project-resolution
 
 
 ## Installation
@@ -23,9 +24,13 @@ Useful to test and prevent your UI from being inconsistent in different resoluti
 Once the plugin is activated, a new button will show up on the Top-Right corner of the Godot Editor, above the Inspector tab.
 On use, the name of the button "Project Resolution" will be renamed by the selected resolution.
 
+- "Reset" will restaure default value to the Projects Settings.
 - "Fullscreen" will toggle the Fullscreen setting from the Projects Settings.
 - "Play on Change" will play your main project scene when you change the resolution with the plugin.
 - "Play Current Scene" will use the current opened scene instead of the main project settings scene.
+- "Multistart" will launch two instances to test network multiplayer project.
 - "Native" will use the current resolution of your desktop.
 - "Landscape" will switch mobile resolutions using Landscape instead of Portrait.
-- Custom resolutions can be added in the list of resolutions inside the plugin.gd file.
+
+Custom resolutions can be added in the list of resolutions inside the plugin.gd file.
+Resolutions higher than the user screen are hidden.
